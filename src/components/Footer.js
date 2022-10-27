@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import { SocialIcon } from "react-social-icons";
+import { SocialIcon } from "react-social-icons";
 import { socialLinks } from "../data";
 const Footer = () => {
 	const SocialIconStyle = {
@@ -11,39 +11,56 @@ const Footer = () => {
 
 	return (
 		<>
-			<div className="bottom">
+			<Wrapper className="bottom">
+				<FooterTop id="social-links">
+					<a
+						href="https://hng9.slack.com/messages/C041JU70S5U/team/U0482L1J9FY"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<img src="slack.png" alt="slack" />
+					</a>
+					<a
+						href="https://www.github.com/jcolejeff"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<img src="github.png" alt="github" />
+					</a>
+				</FooterTop>
 				<hr />
 				<FooterContainer>
-					{socialLinks.map((link, index) => {
-						return (
-							<FooterContent key={index}>
-								{/* <SocialIcon
-									className="shadow"
-									style={SocialIconStyle}
-									url={link}
-								/> */}
-							</FooterContent>
-						);
-					})}
+					<img src="zuri_logo.png" alt="logo" />
+					<p>HNG Internship 9 Frontend Task</p>
+					<img src="I4G.png" alt="I4G logo" />
 				</FooterContainer>
-			</div>
+			</Wrapper>
 		</>
 	);
 };
 
 export default Footer;
 
+const Wrapper = styled.footer``;
 const FooterContainer = styled.div`
-	width: 100vw;
 	display: flex;
 	margin-bottom: 10px;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
+	padding-inline-start: 1rem;
+	img {
+		margin-block-start: 1rem;
+	}
+
+	@media (max-width: 40em) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 `;
 
-const FooterContent = styled.div`
-	margin: 5px;
-	:hover {
-		transform: scale(1.1);
-	}
+const FooterTop = styled.section`
+	display: flex;
+	gap: 1.3rem;
+	justify-content: center;
+	margin-block: 2rem 8rem;
 `;

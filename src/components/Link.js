@@ -5,17 +5,21 @@ const Link = () => {
 	return (
 		<>
 			<ParentWrapper>
-				{linkData.map((item, index) => (
-					<CustomDiv
-						className="shadow"
-						onClick={() => {
-							window.open(item.link, "_blank");
-						}}
-						key={index}
-					>
-						<p className="text-center">{item.name}</p>
-					</CustomDiv>
-				))}
+				{linkData.map((item) => {
+					const { link, id, name } = item;
+					return (
+						<CustomDiv
+							className="shadow"
+							href={link}
+							id={id}
+							target="_blank"
+							rel="noopener noreferrer"
+							key={id}
+						>
+							<p className="text-center">{name}</p>
+						</CustomDiv>
+					);
+				})}
 			</ParentWrapper>
 		</>
 	);
@@ -23,42 +27,36 @@ const Link = () => {
 
 export default Link;
 
-const CustomDiv = styled.div`
+const CustomDiv = styled.a`
 	margin-bottom: 15px;
-	border-radius: 15px;
 	cursor: pointer;
 	align-content: center;
 	align-items: baseline;
 	justify-content: center;
-	width: 40vw;
 	padding: 5px;
-	background-color: red;
 	display: flex;
 	height: max-content;
-	color: white;
-	@media (max-width: 768px) {
-		width: 90vw;
-		text-align: center;
+	color: black;
+	background: #eaecf0;
+	text-decoration: none;
+	border: 1px solid #eaecf0;
+	border-radius: 8px;
+	width: 60vw;
+	@media (max-width: 40em) {
+		width: 80vw;
 	}
 	:hover {
-		background-color: black;
-		color: green;
-		transform: scale(1.05);
+		background-color: rgba(234, 236, 240, 0.1);
 		transition: all 0.2s ease-in-out;
 	}
 	p {
 		flex: 1;
-	}
-	#image {
-		margin-left: 10px;
-		width: 50px;
-		height: 50px;
+		text-align: center;
 	}
 `;
 
 const ParentWrapper = styled.div`
 	margin-top: 20px;
-	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;

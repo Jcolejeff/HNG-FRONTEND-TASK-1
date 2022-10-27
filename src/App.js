@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Link from "./components/Link";
+import "./index.css";
 const App = () => {
 	return (
 		<>
