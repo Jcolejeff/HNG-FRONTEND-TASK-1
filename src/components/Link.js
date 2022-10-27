@@ -41,7 +41,7 @@ const CustomDiv = styled.a`
 	text-decoration: none;
 	border: 1px solid #eaecf0;
 	border-radius: 8px;
-	width: 60vw;
+	width: 80vw;
 	@media (max-width: 40em) {
 		width: 80vw;
 	}

@@ -46,15 +46,21 @@ const FooterContainer = styled.div`
 	display: flex;
 	margin-bottom: 10px;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	padding-inline-start: 1rem;
+	padding-inline: 6rem;
 	img {
 		margin-block-start: 1rem;
+	}
+	p {
+		opacity: 0.9;
+		font-size: 1rem;
 	}
 
 	@media (max-width: 40em) {
 		flex-direction: column;
 		align-items: flex-start;
+		padding-inline-start: 2rem;
 	}
 `;
 

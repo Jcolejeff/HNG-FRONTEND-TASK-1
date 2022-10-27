@@ -44,6 +44,7 @@ const HeaderWrapper = styled.div`
 		position: absolute;
 		left: 70%;
 		bottom: 60%;
+		width: 2rem;
 	}
 	#slack {
 		display: none;
