@@ -1,7 +1,14 @@
-import React from "react";
-// import pages
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Link from "./components/Link";
 const App = () => {
-	return <div className="jeff">jeff</div>;
+	return (
+		<>
+			<Header />
+			<Link />
+			<Footer />
+		</>
+	);
 };
 
 export default App;
